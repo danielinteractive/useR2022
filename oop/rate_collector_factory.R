@@ -9,7 +9,7 @@ new_numeric_rate_collector <- function(type = c("S3", "S4", "R6")) {
     if (type == "S3") {
         numeric_rate_collector_s3()
     } else if (type == "S4") {
-        new("NumericRateCollector")
+        .NumericRateCollector()
     } else if (type == "R6") {
         numeric_rate_collector_r6$new()
     }
@@ -19,7 +19,7 @@ new_factor_rate_collector <- function(type = c("S3", "S4", "R6")) {
     if (type == "S3") {
         factor_rate_collector_s3()
     } else if (type == "S4") {
-        new("FactorRateCollector")
+        .FactorRateCollector()
     } else if (type == "R6") {
         factor_rate_collector_r6$new()
     }

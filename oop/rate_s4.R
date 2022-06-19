@@ -1,12 +1,12 @@
-setClass(
+.Rate <- setClass(
     "Rate",
     slots = list(
         id = "character",
         timestamp = "POSIXct"
     )
 )
-setClass("RateS4", contains = "Rate")
-setClass(
+.RateS4 <- setClass("RateS4", contains = "Rate")
+.NumericRate <- setClass(
     "NumericRate",
     slots = list(
         value = "numeric"
@@ -26,7 +26,7 @@ setValidity(
         }
     }
 )
-setClass(
+.FactorRate <- setClass(
     "FactorRate",
     slots = list(
         value = "character"

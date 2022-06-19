@@ -28,11 +28,11 @@ new_rate_s4 <- function(x) {
 }
 new_rate_s4.numeric <- function(x) {
     st <- Sys.time()
-    new("NumericRate", value = x, id = digest::digest(as.numeric(st) * 1000), timestamp = st)
+    .NumericRate(value = x, id = digest::digest(as.numeric(st) * 1000), timestamp = st)
 }
 new_rate_s4.character <- function(x) {
     st <- Sys.time()
-    new("FactorRate", value = x, id = digest::digest(as.numeric(st) * 1000), timestamp = st)
+    .FactorRate(value = x, id = digest::digest(as.numeric(st) * 1000), timestamp = st)
 }
 new_rate_r6 <- function(x) {
     UseMethod("new_rate_r6")

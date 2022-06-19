@@ -1,4 +1,4 @@
-setClass(
+.RateCollectorS4 <- setClass(
     "RateCollectorS4",
     slots = c(
         rates = "list"
@@ -7,7 +7,7 @@ setClass(
         rates = list()
     )
 )
-setClass(
+.NumericRateCollector <- setClass(
     "NumericRateCollector",
     contains = "RateCollectorS4"
 )
@@ -21,7 +21,7 @@ setValidity(
         }
     }
 )
-setClass(
+.FactorRateCollector <- setClass(
     "FactorRateCollector",
     contains = "RateCollectorS4"
 )
@@ -35,9 +35,3 @@ setValidity(
         }
     }
 )
-
-# methods
-setMethod("add_rate", "RateCollectorS4", function(x, r) {
-    x@rates <- c(x@rates, list(r))
-    x
-})

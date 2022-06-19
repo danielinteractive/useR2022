@@ -18,10 +18,6 @@ factor_rate_collector_s3 <- function() {
 }
 
 # methods
-add_rate.RateCollectorS3 <- function(x, r) {
-    x$rates <- c(x$rates, list(r))
-    x
-}
 get_value.RateCollectorS3 <- function(x) {
     sapply(x$rates, get_value)
 }

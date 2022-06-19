@@ -1,9 +1,20 @@
 # S3 methods for convinience
 ## add_rate
-### method for S3 already defined - skipping
-add_rate.RateCollectorS4 <- function(x, r) {
-    add_rate(x, r)
+add_rate <- function(x, r) {
+    UseMethod("add_rate")
 }
+setGeneric("add_rate")
+add_rate.RateCollectorS3 <- function(x, r) {
+    x$rates <- c(x$rates, list(r))
+    x
+}
+add_rate.RateCollectorS4 <- function(x, r) {
+    x@rates <- c(x@rates, list(r))
+    x
+}
+setMethod("add_rate", "RateCollectorS4", function(x, r) {
+    UseMethod("add_rate")
+})
 add_rate.RateCollectorR6 <- function(x, r) {
     x$add_rate(r)
 }
