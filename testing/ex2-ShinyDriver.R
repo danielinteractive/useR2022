@@ -24,6 +24,8 @@ app$click("reset")
 value3 <- app$waitForValue("greeting", ignore = list(value2), iotype = "output")
 expect_identical(value3, "")
 # Oops - it is not! Why?
+value3
+# So we can instead e.g. expect this:
 expect_identical(value3$message, "")
 app$takeScreenshot()
 app$getAllValues()

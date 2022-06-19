@@ -11,6 +11,8 @@ histogramUI <- function(id) {
 
 histogramServer <- function(id) {
   moduleServer(id, function(input, output, session) {
+    # Homework: Improve this server further with resolving reactives and
+    # validation, req().
     data <- reactive(mtcars[[input$var]])
     output$hist <- renderPlot({
       hist(data(), breaks = input$bins, main = input$var)
@@ -26,7 +28,7 @@ histogramApp <- function() {
   server <- function(input, output, session) {
     histogramServer("hist1")
   }
-  shinyApp(ui, server)  
+  shinyApp(ui, server)
 }
 
 # Then you would load here the package and run the app function.

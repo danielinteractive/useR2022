@@ -29,7 +29,7 @@ testServer(server, {
   print(output$out)
 })
 
-# Show that inputs are not set. (i.e. UI function above has defaults but they
+# Show that inputs are *not* set. (i.e. UI function above has defaults but they
 # don't show up here)
 testServer(server, {
   print(input$x)
